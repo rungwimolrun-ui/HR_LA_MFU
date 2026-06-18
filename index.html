@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Student Assistant</title>
+<title>E-Portfolio LA</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:wght@600;700&display=swap');
 
@@ -353,7 +353,7 @@
   <div class="header">
     <div class="header-icon">🎓</div>
     <div class="header-text">
-      <div class="title">Student Assistant</div>
+      <div class="title">E-Portfolio LA</div>
       <div class="subtitle">
         <span class="online-dot"></span> Online — here to help
       </div>
@@ -406,7 +406,7 @@
       // Clear loading message and show welcome
       const box = document.getElementById('messages');
       box.innerHTML = '';
-      addMessage("Hello! I'm your Student Assistant. Feel free to ask me anything about the school.", 'bot');
+      addMessage("สวัสดีค่ะ SoLA ยินดีตอบคำถามเกี่ยวกับข้อมูลการประเมินผลการปฏิบัติงานระบบ E-port ค่ะ", 'bot');
 
       // Build quick reply buttons from first 3 kw2 only entries
       buildQuickBar();
@@ -417,7 +417,7 @@
     } catch (err) {
       const box = document.getElementById('messages');
       box.innerHTML = '';
-      addMessage("⚠️ Could not connect to the server. Please try again later.", 'bot');
+      addMessage("⚠️ ไม่สามารถเชื่อมต่อกับ Server ได้ในขณะนี้", 'bot');
       console.error(err);
     }
   }
@@ -673,12 +673,12 @@
         const box = document.getElementById('messages');
         const row = document.createElement('div');
         row.className = 'msg-row bot';
-        row.innerHTML = '<div class="bubble">Could you be more specific? What would you like to know?<div class="suggestions"><span class="suggestions-label">Choose one</span>' + chips + '</div></div>';
+        row.innerHTML = '<div class="bubble">ช่วยถามอีกครั้ง โดยให้ข้อมูลเพิ่มเติมทีค่ะ<div class="suggestions"><span class="suggestions-label">Choose one</span>' + chips + '</div></div>';
         box.appendChild(row);
         box.scrollTop = box.scrollHeight;
 
       } else if (result.type === 'unclear') {
-        addMessage("I'm not sure I understand. Could you please rephrase your question?", 'bot');
+        addMessage("ขออภัยค่ะ ไม่เข้าใจคำถามที่คุณถาม ช่วยถามอีกครั้งค่ะ", 'bot');
 
       } else {
         const fallback = keywordData.filter(r => !r.kw1).slice(0, TOP_FALLBACK_COUNT);
